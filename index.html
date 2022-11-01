@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Astronomy Picture of the Day</title>
+
+        <!-- FAVICON -->
+        <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="images/favicon/site.webmanifest">
+
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- SASS -->
+        <link rel="stylesheet" href="sass source/stylesheets/index.scss build/stylesheets/index.css">
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/styles-index.css">
+
+        <!-- FONTS -->
+            <!-- AUDIOWIDE -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+            <!-- TEKO -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+
+            <!-- RAJDHANI -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <content class="container">
+                <div class="row px-5">
+                    <div class="d-flex flex-wrap">
+                        <div class="col-12 d-flex justify-content-center">
+                            <h1 class="p-3 mb-3 rounded text-background text-white zoom-300">Astronomy Picture of the Day</h1>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap p-apod">
+                        <div id="apod-date" class="col-12 d-flex justify-content-center align-items-center p-3 mb-5 rounded text-background text-white"></div>
+                        <div id="apod-image" class="col-12 d-flex justify-content-center align-items-center mb-5 rounded"></div>
+                        <div id="apod-title" class="col-12 d-flex justify-content-center p-3 rounded text-background text-white"></div>
+                        <div id="apod-explanation" class="col-12 d-flex justify-content-center p-3 rounded text-background text-white"></div>
+                        <div id="apod-copyright" class="col-12 d-flex justify-content-center p-3 rounded text-background text-white"></div>
+                    </div>
+
+                    <div class="d-flex flex-wrap">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button onclick="inputDate()" class="p-3 mt-5">Change The Date</button>
+                        </div>
+                    </div>
+                </div>
+            </content>
+
+            <footer class="container pt-5">
+                <div class="d-flex flex-wrap justify-content-center align-items-center py-3">
+                    <p class="p-3 me-auto mb-0 rounded text-background footer-text">
+                       © APOD | Design by Aleksandar Temelkov
+                    </p>
+    
+                    <ul class="nav p-3 rounded text-background">
+                        <li class="nav-item">
+                            <a href="https://github.com/AleksandarTemelkov" target="_blank">
+                                <i class="bi bi-github icon-white" role="img" aria-label="GitHub"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.instagram.com/aleksa_temelkov" target="_blank">
+                                <i class="bi bi-instagram ms-3 icon-white" role="img" aria-label="Instagram"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.twitter.com/aleksa_temelkov" target="_blank">
+                                <i class="bi bi-twitter ms-3 icon-white" role="img" aria-label="Twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+
+        <script src="js/script-index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+$color-black: hsla(0, 0%, 5%, 1);
+$color-white: hsla(0, 0%, 95%, 1);
+$color-text-background: hsla(0, 0%, 25%, 0.25);
+
+
+    /* ELEMENTS */
+
+body {
+    background-color: $color-black;
+}
+
+main {
+    background: url("../images/BlackStarrySky.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 400;
+    color: $color-white;
+}
+
+p, button {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    color: $color-white;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+hr {
+    margin-bottom: 0;
+    border-top: 1px solid $color-white;
+    opacity: 1;
+}
+
+
+    /* BOOTSTRAP CLASSES */
+
+.row {
+    margin: 0 !important;
+}
+
+.text-white {
+    color: $color-white !important;
+}
+
+button {
+    background-color: $color-white !important;
+    color: $color-black !important;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+
+    /* CLASSES AND IDS */
+
+#apod-image > img, .zoom-200, .zoom-300, .footer-text, .icon-white, button {
+    transition: 0.5s;
+}
+
+#apod-image > img:hover {
+    width: 100%;
+}
+
+.text-background {
+    background-color: $color-text-background
+}
+    
+.footer-text, .icon-white, .icon-white:visited {
+    color: $color-white !important;
+}
+
+.footer-text, .icon-white, .icon-white:visited, button {
+    opacity: 0.5;
+}
+
+.footer-text:hover, .icon-white:hover, button:hover {
+    opacity: 0.75;
+}
+
+.footer-text:active, .icon-white:active, button:active {
+    opacity: 1;
+}
+
+
+    /* OTHER RESOLUTIONS */
+
+/* XS */
+@media only screen and (max-width: 576px) {
+    .p-apod {
+        padding: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+    
+    button {
+        font-size: 1.5rem;
+    }
+
+    #apod-image > img {
+        width: 100%;
+    }
+
+    .zoom-200:hover {
+        font-size: 150%;
+    }
+}
+
+/* SM */
+@media only screen and (min-width: 576px) {
+    .p-apod {
+        padding: 1.667rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+    
+    button {
+        font-size: 1.625rem;
+    }
+
+    #apod-image > img {
+        width: 90%;
+    }
+
+    .zoom-200:hover {
+        font-size: 162.5%;
+    }
+}
+
+/* MD */
+@media only screen and (min-width: 768px) {
+    .p-apod {
+        padding: 2.333rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    button {
+        font-size: 1.75rem;
+    }
+
+    #apod-image > img {
+        width: 80%;
+    }
+
+    .zoom-200:hover {
+        font-size: 175%;
+    }
+}
+
+/* LG */
+@media only screen and (min-width: 992px) {
+    .p-apod {
+        padding: 3rem;
+    }
+
+    p {
+        font-size: 1.375rem;
+    }
+
+    button {
+        font-size: 1.875rem;
+    }
+
+    #apod-image > img {
+        width: 70%;
+    }
+
+    .zoom-200:hover {
+        font-size: 187.5%;
+    }
+}
+
+/* XL */
+@media only screen and (min-width: 1200px) {
+    .p-apod {
+        padding: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+
+    #apod-image > img {
+        width: 60%;
+    }
+
+    .zoom-200:hover {
+        font-size: 200%;
+    }
+}
+
+/* XXL */
+@media only screen and (min-width: 1400px) {
+    .p-apod {
+        padding: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+
+    #apod-image > img {
+        width: 50%;
+    }
+
+    .zoom-200:hover {
+        font-size: 200%;
+    }
+
+    .zoom-300:hover {
+        font-size: 300%;
+    }
+}
