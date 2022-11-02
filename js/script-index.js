@@ -3,8 +3,7 @@ let date_year = date.getFullYear();
 let date_month = date.getMonth() + 1;
 let date_day = date.getDate();
 
-formatMonthDate();
-formatDate();
+formatDate(0);
 let date_latest = date;
 
 sendAPIRequest();
@@ -19,11 +18,22 @@ async function sendAPIRequest() {
     let data = await response.json();
     console.log(data);
 
-    /* TIMEZONES AHEAD + UNAVAILABLE DATES FIX */
+    /* TIMEZONES AHEAD FIX */
+    if (data.code == 404) {
+        console.log(`• Called from function "sendAPIRequest()" - ERROR (CODE 404): ${date}`);
+        formatDate(1);
+        console.log(`• Called from function "sendAPIRequest()" - FIX (DATE_LATEST - 1): ${date}`);
+        response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}&date=${date}&concept_tags=True`);
+        console.log(response);
+        data = await response.json();
+        console.log(data);
+    }
+
+    /* UNAVAILABLE DATES FIX */
     if (data.code == 400) {
-        console.log(`• Called from function "sendAPIRequest()" - ERROR: ${date}`);
+        console.log(`• Called from function "sendAPIRequest()" - ERROR (CODE 400): ${date}`);
         date = date_latest;
-        console.log(`• Called from function "sendAPIRequest()" - FIX: ${date}`);
+        console.log(`• Called from function "sendAPIRequest()" - FIX (DATE_LATEST): ${date}`);
         response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}&date=${date}&concept_tags=True`);
         console.log(response);
         data = await response.json();
@@ -43,8 +53,33 @@ function useAPIData(data) {
 
 function inputDate() {
     date = prompt("Enter date (YYYY-MM-DD):");
+    formatDate(0);
     sendAPIRequest(date);
 }
+
+function formatDate(i) {
+    if (date_day - i <= 0) {
+        if (date_month - 1 <= 0) date_year--;
+        date_month--;
+        if (date_month == 1 || date_month == 3 || date_month == 5 || date_month == 7 || date_month == 8 || date_month == 10 || date_month == 12) date_day = 31 + date_day - i;
+        else if (date_month == 4 || date_month == 6 || date_month == 9 || date_month == 11) date_day = 30 + date_day - i;
+        else if (date_month == 2) {
+            if (date_year % 4 == 0) date_day = 29 + date_day - i;
+            else date_day = 28 + date_day - i;
+        }
+
+        if (date_month <= 9 && date_day <= 9) date = `${date_year}-0${date_month}-0${date_day}`;
+        else if (date_day <= 9) date = `${date_year}-${date_month}-0${date_day}`;
+        else if (date_month <= 9) date = `${date_year}-0${date_month}-${date_day}`;
+        else if (date_month > 9 && date_day > 9) date = `${date_year}-${date_month}-${date_day}`;
+    }
+    else {
+        if (date_month <= 9 && date_day <= 9) date = `${date_year}-0${date_month}-0${date_day - i}`;
+        else if (date_day <= 9) date = `${date_year}-${date_month}-0${date_day - i}`;
+        else if (date_month <= 9) date = `${date_year}-0${date_month}-${date_day - i}`;
+        else if (date_month > 9 && date_day > 9) date = `${date_year}-${date_month}-${date_day - i}`;
+    }
+};
 
 function formatMonthDate() {
     if (date_month == 1 || date_month == 3 || date_month == 5 || date_month == 7 || date_month == 8 || date_month == 10 || date_month == 12) {
@@ -74,10 +109,3 @@ function formatMonthDate() {
         }
     }
 }
-
-function formatDate() {
-    if (date_month <= 9 && date_day <= 9) date = `${date_year}-0${date_month}-0${date_day}`;
-    else if (date_day <= 9) date = `${date_year}-${date_month}-0${date_day}`;
-    else if (date_month <= 9) date = `${date_year}-0${date_month}-${date_day}`;
-    else if (date_month > 9 && date_day > 9) date = `${date_year}-${date_month}-${date_day}`;
-};
