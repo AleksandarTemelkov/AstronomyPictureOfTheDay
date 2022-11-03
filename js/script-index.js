@@ -49,7 +49,6 @@ function useAPIData(data) {
     `<div id="apod-image" class="col-12 d-flex justify-content-center align-items-center">
         <img src="${data.url}" width="50%" height="100%">
     </div>`;
-    // else if (data.media_type == "video") document.querySelector("#apod-media").innerHTML = `<a href="${data.url}" target="_blank">Link To The Video</a>`;
     else if (data.media_type == "video") document.querySelector("#apod-media").innerHTML =
     `<div id="apod-video">
         <iframe class="video" src="${data.url}&autoplay=1" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; xr-spatial-tracking" allowfullscreen></iframe>
@@ -61,7 +60,6 @@ function useAPIData(data) {
 
 function inputDate() {
     date = prompt("Enter date (YYYY-MM-DD):");
-    formatDate(0);
     sendAPIRequest(date);
 }
 
