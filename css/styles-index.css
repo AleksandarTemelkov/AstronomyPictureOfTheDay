@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
   color: hsl(0deg, 0%, 95%);
 }
 
-p, button {
+p, a, button {
   font-family: "Rajdhani", sans-serif;
   font-weight: 400;
   color: hsl(0deg, 0%, 95%);
@@ -36,7 +36,7 @@ hr {
   margin: 0 !important;
 }
 
-.text-white {
+.text-white, a:hover, a:visited {
   color: hsl(0deg, 0%, 95%) !important;
 }
 
@@ -64,16 +64,31 @@ button {
   color: hsl(0deg, 0%, 95%) !important;
 }
 
-.footer-text, .icon-white, .icon-white:visited, button {
+.footer-text, .icon-white, .icon-white:visited, a, a:visited, button {
   opacity: 0.5;
 }
 
-.footer-text:hover, .icon-white:hover, button:hover {
+.footer-text:hover, .icon-white:hover, a:hover, button:hover {
   opacity: 0.75;
 }
 
-.footer-text:active, .icon-white:active, button:active {
+.footer-text:active, .icon-white:active, a:active, button:active {
   opacity: 1;
+}
+
+#apod-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* OTHER RESOLUTIONS */
@@ -82,7 +97,7 @@ button {
   .p-apod {
     padding: 1rem;
   }
-  p {
+  p, a {
     font-size: 1rem;
   }
   button {
@@ -100,7 +115,7 @@ button {
   .p-apod {
     padding: 1.667rem;
   }
-  p {
+  p, a {
     font-size: 1.125rem;
   }
   button {
@@ -118,7 +133,7 @@ button {
   .p-apod {
     padding: 2.333rem;
   }
-  p {
+  p, a {
     font-size: 1.25rem;
   }
   button {
@@ -136,7 +151,7 @@ button {
   .p-apod {
     padding: 3rem;
   }
-  p {
+  p, a {
     font-size: 1.375rem;
   }
   button {
@@ -154,7 +169,7 @@ button {
   .p-apod {
     padding: 3rem;
   }
-  p {
+  p, a {
     font-size: 1.5rem;
   }
   button {
@@ -172,7 +187,7 @@ button {
   .p-apod {
     padding: 3rem;
   }
-  p {
+  p, a {
     font-size: 1.5rem;
   }
   button {
