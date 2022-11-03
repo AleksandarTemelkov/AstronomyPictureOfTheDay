@@ -109,6 +109,9 @@ button {
   .zoom-200:hover {
     font-size: 150%;
   }
+  .zoom-300:hover {
+    font-size: 250%;
+  }
 }
 /* SM */
 @media only screen and (min-width: 576px) {
@@ -126,6 +129,9 @@ button {
   }
   .zoom-200:hover {
     font-size: 162.5%;
+  }
+  .zoom-300:hover {
+    font-size: 262.5%;
   }
 }
 /* MD */
@@ -145,6 +151,9 @@ button {
   .zoom-200:hover {
     font-size: 175%;
   }
+  .zoom-300:hover {
+    font-size: 275%;
+  }
 }
 /* LG */
 @media only screen and (min-width: 992px) {
@@ -163,6 +172,9 @@ button {
   .zoom-200:hover {
     font-size: 187.5%;
   }
+  .zoom-300:hover {
+    font-size: 287.5%;
+  }
 }
 /* XL */
 @media only screen and (min-width: 1200px) {
@@ -180,6 +192,9 @@ button {
   }
   .zoom-200:hover {
     font-size: 200%;
+  }
+  .zoom-300:hover {
+    font-size: 300%;
   }
 }
 /* XXL */
