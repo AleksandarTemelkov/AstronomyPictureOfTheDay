@@ -60,7 +60,6 @@ function useAPIData(data) {
 
 function inputDate() {
     date = prompt("Enter date (YYYY-MM-DD):");
-    formatDate(0);
     sendAPIRequest(date);
 }
 
